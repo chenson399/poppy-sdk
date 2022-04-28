@@ -1,3 +1,8 @@
+"""
+Author: Colin Henson
+Uses microphone to convert speech to text, then matches text to generate a response
+The response is the face display changing, gestures being made, and sound files being played
+"""
 import os
 import pandas as pd
 import random

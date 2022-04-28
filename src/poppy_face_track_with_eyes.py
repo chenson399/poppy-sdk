@@ -1,3 +1,7 @@
+"""
+Author: Sydney Awid
+Tracks the subjects face and follows their face with the eyes on screen
+"""
 import cv2 as cv
 import numpy as np
 from poppy_face_display import poppy_face

@@ -1,3 +1,8 @@
+"""
+Authors: Colin Henson, Sydney Awid
+Combines several subsystems to allow for a genuine humanistic interaction
+"""
+
 import threading
 import cv2
 import time

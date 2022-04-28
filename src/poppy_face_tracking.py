@@ -1,3 +1,10 @@
+"""
+Authors: Sydney Awid, Hannah Stent
+This file uses facial detection of the neck servos to track the subject in front of it
+Erratic behavior can happen if more than one person in robot camera view
+"""
+
+
 from poppy_servo_control import poppy_body_gesture
 import cv2 as cv
 

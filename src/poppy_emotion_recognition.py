@@ -1,3 +1,7 @@
+"""
+Author: Sydney Awid
+Recognizes emotion of the subject in front of the robot
+"""
 import cv2 as cv
 from deepface import DeepFace
 import numpy as np

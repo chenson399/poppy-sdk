@@ -1,3 +1,7 @@
+"""
+Author: Sydney Awid
+Used to control the robot servos
+"""
 import pypot.dynamixel
 import time
 

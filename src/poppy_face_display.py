@@ -1,3 +1,7 @@
+"""
+Author: Sydney Awid
+Uses pre-drawn images to display faces on the screen in poppy's head
+"""
 from os import listdir
 from os.path import isfile, join
 import cv2 as cv

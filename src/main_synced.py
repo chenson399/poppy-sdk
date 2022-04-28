@@ -15,14 +15,18 @@ audio_folder = ""
 faces_path = ""
 model_path = ""
 
-# Use 1 if using builtin/only microphone
+# Use 1 if using builtin/only microphone, use other integers for other microphones
 input_index = 1
+# Run is used to stay in while loop
 run = True
+
+# 0 is the default camera, use other integers for other cameras
+camera = 0
 
 # Main call
 if __name__ == '__main__':
     # Cap1 is camera on poppy, cap2 is camera looking at poppy
-    cap1 = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    cap1 = cv2.VideoCapture(camera, cv2.CAP_DSHOW)
     # Initialize emotion recognition
     emotion_recognition = poppy_emotion_recognizer(cap1, model_path)
     # Initialize face tracking
@@ -38,8 +42,8 @@ if __name__ == '__main__':
     body_gesture.set_to_neutral()
 
     # Create face tracking process
-    face_tracking_process = threading.Thread(target=face_tracking.main_window, args=())
-    emotion_detection_process = threading.Thread(target=poppy_emotion_recognizer.main_window, args=())
+    face_tracking_process = threading.Thread(target=face_tracking.main_window)
+    emotion_detection_process = threading.Thread(target=poppy_emotion_recognizer.main_window)
     face_display_process = threading.Thread(target=face_display.face_display)
     # Starting threading processes
     face_tracking_process.start()
@@ -58,5 +62,3 @@ if __name__ == '__main__':
 
         # Run speech module for interaction
         run = speech.response_module()
-
-

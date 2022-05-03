@@ -20,7 +20,7 @@ face_tracking = poppy_tracking(cap1, model_path)
 face_tracking.main_window()
 ```
 This file will connect to a camera and the DYNAMIXEL servo motors for the Poppy robot to detect and track a face. The Poppy robot  was redesigned to use MX-28 for both neck servos, so check to make sure that the servo id’s for the servos you are using matches the id’s for your robot in the poppy_servo_control.py file. 
- # This file is meant to track one face only and if there are multiple faces detected, it can cause the servos to move erratically. 
+ ### This file is meant to track one face only and if there are multiple faces detected, it can cause the servos to move erratically. 
 camera: use 0 for default camera on laptop, 1 or other integer for external cameras
 
 ## poppy_face_track_with_eyes.py
@@ -41,7 +41,7 @@ emotion_recognition= poppy_tracking(cap1, image_path, model_path)
 emotion_recognition.main_window()
 
 ```
-This file uses deepface library to do emotion analysis on a detected face and shows detected emotion on the screen. The code uses a try and except statement so that code does not stop when a face is not detected. 
+This file uses deepface library to do emotion analysis on a detected face and shows detected emotion on the screen. The code uses a try and except statement so that code does not stop when a face is not detected. It will return the dominant emotion and print the emotion on the video stream window that is detected from the passed frame.
 
 ## poppy_full_eye_tracking.py
 ```python
@@ -53,13 +53,20 @@ two_by_two_tracker = eye_tracking.two_by_two_eye_tracker()
 This file is used to track eyes from the camera on Poppy and project where the subject is looking using a monitor looking at the robot. It contains 2x2, 3x3, and 4x4 eye tracking. It uses a modified gaze_tracking library to implement it. Cap1 is the camera on poppy, and cap2 is the camera looking at poppy. It creates two openCV windows to display the camera streams. Pressing the esc key will exit these windows.
 
 ## poppy_face_display.py
-`` Insert how to call the facial emotion display
-Brief explanation on how it works and what it returns``
+```python
+from poppy_face_display import poppy_face
 
+poppy_face = poppy_face(file_path)
+poppy_face.setup_image(face_emotion)
+```
+This file uses the face_attributes folder to display pre-drawned facial images using opencv library. Use the correct file_path format based on your os. The face_emotion that is passed on the setup_image function is the file name of the image you want to display. Ex: To display 'angry.png', face_emotion = 'angry'. The code will format all images in the folder as long as it is a .png file and are stored in a dictionary which uses the file names as the keys.This code can also be used to display any .png file on the screen. 
 ## poppy_servo_control.py
-`` Insert an example of a head and body gesture
-Brief explanation on how it works and what it returns``
+```python
+from poppy_servo_control import poppy_body_gesture
 
+poppy_body_gesture = poppy_body_gesture()
+```
+This file uses the pypot library to connect and control the Dynamixel servo network to display body gestures. Body gestures were pre made and can be called through different functions such as set_to_neutral. This code also has some built in functions to help generate new body gestures. It is highly recommended to use the Dynamixel wizard to set the robot to a pose then use the pose_generator function to print code for the new pose. 
 ## poppy_speech_recognition.py
 ```python
 from poppy_speech_recognition import poppy_speech

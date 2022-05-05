@@ -4,8 +4,8 @@ ___
 
 #### Authors: Colin Henson, Sydney Awid, Hannah Stent
 
-## Abstract
-The Poppy Social Robotics Project utilizes the foundation of the [Poppy Project](https://poppy-project.org/en/). Several changes have been made to the robot for our purposes. The AT-12 servos in the neck were replaced with MX28s to keep them consistent with the other servos and for the increased torque load. The head was redesigned using solidWorks and was 3D printed. This new head houses a LCD display, a speaker, a microphone, and a camera. This allows the robot to interact with the world around it. A new base was added for stability with a platform to house a Jetson Nano 4GB model. This can be used in the future to make the robot a self contained product. This code can be used with other poppy robots but the servo controls will need to be changed to work on a new poppy model. 
+## Project Overview
+The Poppy Social Robotics Project utilizes the foundation of the [Poppy Project](https://poppy-project.org/en/). Several changes have been made to the robot for our purposes. The AT-12 servos in the neck were replaced with MX28s to keep them consistent with the other servos and for the increased torque load. The head was redesigned using solidWorks and was 3D printed. This new head houses a LCD display, a speaker, a microphone, and a camera. This allows the robot to interact with the world around it. A new base was added for stability with a platform to house a Jetson Nano 4GB model. This can be used in the future to make the robot a self contained product. This code can be used with other poppy robots but the servo controls will need to be changed to work on a new poppy model. This project will work for Python 3.x.
 
 ## Voice Recognition and Response
 `` Insert just the way to call the entire class to make it work

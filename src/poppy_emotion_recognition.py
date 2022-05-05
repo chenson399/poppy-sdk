@@ -86,20 +86,20 @@ class poppy_emotion_recognizer():
         """
         # check what dominant emotion was detected, based on detected emotion return index for new
         # emotion label and print the new emotion label
-        match dominant_emotion:
-            case 'angry':
-                return 0
-            case 'disgust':
-                return 1
-            case 'fear':
-                return 2
-            case 'happy':
-                return 3
-            case 'sad':
-                return 4
-            case 'surprise':
-                return 5
-            case 'neutral':
-                return 6
-            case _:
-                return 7
+        if dominant_emotion == 'angry':
+            return 0
+        elif dominant_emotion == 'disgust':
+            return 1
+        elif dominant_emotion == 'fear':
+            return 2
+        elif dominant_emotion == 'happy':
+            return 3
+        elif dominant_emotion == 'sad':
+            return 4
+        elif dominant_emotion == 'surprise':
+            return 5
+        elif dominant_emotion == 'neutral':
+            return 6
+        else:
+            return 7
+
